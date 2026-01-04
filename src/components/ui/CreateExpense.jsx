@@ -57,7 +57,7 @@ const CreateExpense = () => {
         try {
             setLoading(true);
             // Add API call here
-            const res = await axios.post("http://localhost:8000/api/v1/expense/add", formData, {
+            const res = await axios.post("https://expense-tracker-backend-m0fv.onrender.com/api/v1/expense/add", formData, {
                 headers: {
                     "Content-Type": "application/json"
                 },
