@@ -1,16 +1,83 @@
-# React + Vite
+# 💰 Expense Tracker – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **Expense Tracker frontend** built with **React** that helps users track and manage their daily expenses efficiently.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**  
+🌐 https://expense-tracker-plum-three-83.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🖥️ Preview
+> Clean UI • Responsive Design • Smooth UX
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Highlights
+- 🔐 Secure user authentication (Login / Signup)
+- ➕ Add, ✏️ edit, and 🗑️ delete expenses
+- 📊 Simple and intuitive expense dashboard
+- 📱 Fully responsive across devices
+- 🔔 Real-time toast notifications
+- 🎨 Modern and minimal UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- ⚛️ React
+- 🟨 JavaScript
+- 🎨 Tailwind CSS
+- 🔁 Axios
+- 🧭 React Router DOM
+- 🗃️ Redux 
+
+---
+
+## ⚙️ Getting Started
+
+### 1️⃣ Clone the repository  
+git clone https://github.com/your-username/Expense-Tracker.git
+
+### 2️⃣ Navigate to the project directory  
+cd Expense-Tracker
+
+### 3️⃣ Install dependencies  
+npm install
+
+### 4️⃣ Run the application  
+npm run dev
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the root directory:
+
+VITE_API_URL=your_backend_api_url
+
+---
+
+## 📁 Project Structure
+
+src/  
+ ├── components/   → Reusable UI components  
+ ├── pages/        → Application pages  
+ ├── redux/        → State management  
+ ├── utils/        → Helper functions  
+ └── App.jsx       → Root component  
+
+---
+
+## 🚀 Deployment
+The frontend is deployed on **Vercel** for fast and reliable performance.
+
+---
+
+## 📌 Project Status
+🛠️ Actively improving UI and adding features
+
+---
+
+## 👨‍💻 Author
+**Utkarsh Kumar**
+
+⭐ If you like this project, don’t forget to star the repo!
