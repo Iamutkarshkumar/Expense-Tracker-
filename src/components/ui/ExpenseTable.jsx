@@ -88,12 +88,12 @@ const ExpenseTable = () => {
       <TableCaption>A list of your recent expenses.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[150px]">Mark As Done</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Amount</TableHead>
-          <TableHead>Category</TableHead>
-          <TableHead>Date</TableHead>
-          <TableHead className="text-right">Actions</TableHead>
+          <TableHead className="w-[150px] text-black">Mark As Done</TableHead>
+          <TableHead className="text-black">Description</TableHead>
+          <TableHead className="text-black">Amount</TableHead>
+          <TableHead className="text-black">Category</TableHead>
+          <TableHead className="text-black">Date</TableHead>
+          <TableHead className="text-right text-black">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -105,10 +105,10 @@ const ExpenseTable = () => {
                 onCheckedChange={() => handleCheckboxChnage(expense._id,)}
               />
             </TableCell>
-            <TableCell className={`${expense.done ? 'line-through' : ''}`}>{expense.description}</TableCell>
-            <TableCell className={`${expense.done ? 'line-through' : ''}`}>₹{expense.amount}</TableCell>
-            <TableCell className={`${expense.done ? 'line-through' : ''}`}>{expense.category}</TableCell>
-            <TableCell className={`${expense.done ? 'line-through' : ''}`}>{expense.createdAt?.split("T")[0]}</TableCell>
+            <TableCell className={`${expense.done ? 'line-through' : 'text-black'}`}>{expense.description}</TableCell>
+            <TableCell className={`${expense.done ? 'line-through' : 'text-black'}`}>₹{expense.amount}</TableCell>
+            <TableCell className={`${expense.done ? 'line-through' : 'text-black'}`}>{expense.category}</TableCell>
+            <TableCell className={`${expense.done ? 'line-through' : 'text-black'}`}>{expense.createdAt?.split("T")[0]}</TableCell>
             <TableCell className="text-right">
               <div className="flex items-center justify-end gap-2">
                 <Button onClick={() => removeExpenseHandler(expense._id)} size="icon" className="rounded-full border text-red-600 border-red-600 hover:border-transparent" variant="outline"><Trash className="w-4 h-4" /></Button>
