@@ -1,0 +1,96 @@
+/* Container acts as a clean, light space */
+.ambient-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8fafc; /* CHANGED: Light slate/white background */
+  overflow: hidden;
+  z-index: -1; 
+}
+
+/* --- Fluid Dynamics Layer --- */
+.fluid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7; 
+}
+
+.fluid-shape {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: multiply; /* CHANGED: Multiply is best for dark shapes on light backgrounds */
+}
+
+/* Soft Blue Orb */
+.f1 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.8) 0%, rgba(147, 197, 253, 0) 70%);
+  top: -10%;
+  left: -10%;
+  animation: float 25s ease-in-out infinite alternate;
+}
+
+/* Soft Rose/Pink Orb */
+.f2 {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(253, 164, 175, 0.6) 0%, rgba(253, 164, 175, 0) 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: float 30s ease-in-out infinite alternate-reverse;
+}
+
+/* Soft Purple Orb */
+.f3 {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.5) 0%, rgba(216, 180, 254, 0) 70%);
+  top: 30%;
+  left: 40%;
+  animation: float 35s ease-in-out infinite alternate;
+}
+
+/* The Interactive Glow */
+.fluid-interactive {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  margin-top: -20vw;
+  margin-left: -20vw;
+  background: radial-gradient(circle, rgba(167, 243, 208, 0.5) 0%, rgba(167, 243, 208, 0) 60%); /* Soft mint */
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* --- Canvas Layer --- */
+.ambient-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, -5%) scale(1.1);
+  }
+  66% {
+    transform: translate(-5%, 5%) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
