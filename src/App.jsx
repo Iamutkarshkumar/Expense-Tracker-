@@ -1,14 +1,22 @@
 import './App.css'
 import { Button } from './components/ui/button.tsx'
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Home from './components/ui/Home.jsx';
 import Login from './components/ui/Login.jsx';
 import Signup from './components/ui/Signup.jsx';
 import { Toaster } from "@/components/ui/sonner"
+import { useSelector } from 'react-redux';
+
+// Protected Route Component
+const ProtectedRoute = ({ element }) => {
+  const { user } = useSelector(store => store.auth);
+  return user ? element : <Navigate to="/login" />;
+};
+
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <Home/>
+    element: <ProtectedRoute element={<Home/>} />
   },
   {
     path: '/login',

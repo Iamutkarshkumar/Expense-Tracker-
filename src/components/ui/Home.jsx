@@ -38,7 +38,7 @@ const Home = () => {
                 <Navbar />
                 <div className="max-w-6xl mx-auto mt-6 px-4">
                     <div className="flex items-center justify-between mb-5">
-                        <h1 className="text-lg font-semibold tracking-wide bg-gradient-to-r from-purple-500 to-red-500 bg-clip-text text-transparent transition-transform duration-300 hover:scale-105">
+                        <h1 className="text-lg font-semibold tracking-wide bg-linear-to-r from-purple-500 to-red-500 bg-clip-text text-transparent transition-transform duration-300 hover:scale-105">
                             Expense Tracker
                         </h1>
 
@@ -49,7 +49,7 @@ const Home = () => {
                         <h1 className="font-medium text-lg text-black">Filter By:</h1>
 
                         <Select onValueChange={changeCategoryHandler}>
-                            <SelectTrigger id="category" className="w-[180px]">
+                            <SelectTrigger id="category" className="w-45">
                                 <SelectValue placeholder="Category"  />
                             </SelectTrigger>
                             <SelectContent>
@@ -74,7 +74,7 @@ const Home = () => {
                         </Select>
 
                         <Select onValueChange={changeDoneHandler}>
-                            <SelectTrigger id="markAs" className="w-[180px]">
+                            <SelectTrigger id="markAs" className="w-45">
                                 <SelectValue placeholder="Mark As" />
                             </SelectTrigger>
                             <SelectContent>

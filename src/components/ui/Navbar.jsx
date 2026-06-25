@@ -16,8 +16,7 @@
 // import { toast } from "sonner";
 // import { useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
-// import { clearExpense } from "../../redux/expenseSlice";
-
+// import { clearExpense } from "../../redux/expenseSlice";    import { logout } from "../../redux/authSlice";
 // const Navbar = () => {
 //     const {user} = useSelector(store=>store.auth);
 //     const navigate = useNavigate();
@@ -134,6 +133,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useSelector, useDispatch } from "react-redux";
 import { clearExpense } from "../../redux/expenseSlice";
+import { logout } from "../../redux/authSlice";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
@@ -150,6 +150,7 @@ const Navbar = () => {
       if (res.data.success) {
         toast.success(res.data.message);
         dispatch(clearExpense());
+        dispatch(logout());
         navigate("/login");
       }
     } catch (error) {
