@@ -173,7 +173,7 @@ const Navbar = () => {
 
         {/* Center */}
         {user && (
-          <p className="hidden md:block text-xl font-semibold tracking-wide bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
+          <p className="hidden md:block text-xl font-semibold tracking-wide bg-linear-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
             {user.fullname
               ?.split(" ")
               .map(w => w[0].toUpperCase() + w.slice(1))
@@ -214,7 +214,7 @@ const Navbar = () => {
               </Button>
             </Link>
             <Link to="/signup">
-              <Button className="px-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90">
+              <Button className="px-6 bg-linear-to-r from-purple-500 to-pink-500 hover:opacity-90">
                 Signup
               </Button>
             </Link>
