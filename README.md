@@ -1,83 +1,135 @@
-# 💰 Expense Tracker – Frontend
+# 💰 Expense Tracker — Frontend
 
-A modern and responsive **Expense Tracker frontend** built with **React** that helps users track and manage their daily expenses efficiently.
+A full-featured, responsive expense management application built with **React 19** and **Redux Toolkit**. Users can securely sign up, log in, and manage their daily expenses with a clean, animated UI deployed on Vercel.
 
-🔗 **Live Demo**  
-🌐 https://expense-tracker-plum-three-83.vercel.app
-
----
-
-## 🖥️ Preview
-> Clean UI • Responsive Design • Smooth UX
+🔗 **Live Demo:** [expense-tracker-plum-three-83.vercel.app](https://expense-tracker-plum-three-83.vercel.app)  
+🔗 **Backend Repo:** [github.com/Iamutkarshkumar/Expense-Tracker-Backend](https://github.com/Iamutkarshkumar/Expense-Tracker-Backend)
 
 ---
 
-## ✨ Key Highlights
-- 🔐 Secure user authentication (Login / Signup)
-- ➕ Add, ✏️ edit, and 🗑️ delete expenses
-- 📊 Simple and intuitive expense dashboard
-- 📱 Fully responsive across devices
-- 🔔 Real-time toast notifications
-- 🎨 Modern and minimal UI
+## ✨ Features
+
+- 🔐 **Authentication** — JWT-based login and signup with protected routes
+- ➕ **Expense CRUD** — Add, edit, delete, and mark expenses as done/undone
+- 🗂️ **Category Filtering** — Filter expenses by category in real time
+- 🗃️ **Persistent State** — Redux Persist keeps user session alive across page reloads
+- 🔔 **Toast Notifications** — Real-time feedback via Sonner
+- 🎨 **Animated Background** — Custom canvas-based ambient animation on auth pages
+- 📱 **Fully Responsive** — Works seamlessly across desktop and mobile
+- 🌙 **Theme Support** — Dark/light mode via `next-themes`
 
 ---
 
 ## 🛠️ Tech Stack
-- ⚛️ React
-- 🟨 JavaScript
-- 🎨 Tailwind CSS
-- 🔁 Axios
-- 🧭 React Router DOM
-- 🗃️ Redux 
 
----
-
-## ⚙️ Getting Started
-
-### 1️⃣ Clone the repository  
-git clone https://github.com/your-username/Expense-Tracker.git
-
-### 2️⃣ Navigate to the project directory  
-cd Expense-Tracker
-
-### 3️⃣ Install dependencies  
-npm install
-
-### 4️⃣ Run the application  
-npm run dev
-
----
-
-## 🌐 Environment Variables
-
-Create a `.env` file in the root directory:
-
-VITE_API_URL=your_backend_api_url
+| Layer | Technology |
+|---|---|
+| UI Framework | React 19 |
+| Styling | Tailwind CSS v4, shadcn/ui components |
+| State Management | Redux Toolkit + Redux Persist |
+| Routing | React Router DOM v7 |
+| HTTP Client | Axios |
+| Notifications | Sonner |
+| Icons | Lucide React |
+| Build Tool | Vite 7 |
+| Deployment | Vercel |
 
 ---
 
 ## 📁 Project Structure
 
-src/  
- ├── components/   → Reusable UI components  
- ├── pages/        → Application pages  
- ├── redux/        → State management  
- ├── utils/        → Helper functions  
- └── App.jsx       → Root component  
+```
+src/
+├── components/
+│   ├── shared/
+│   │   ├── AnimatedBackground.jsx   # Canvas particle animation
+│   │   └── Logo.jsx
+│   └── ui/
+│       ├── Home.jsx                 # Main dashboard
+│       ├── Navbar.jsx               # Responsive top nav
+│       ├── CreateExpense.jsx        # Add expense modal/form
+│       ├── UpdateExpense.jsx        # Edit expense modal/form
+│       ├── ExpenseTable.jsx         # Expense list with filters
+│       ├── Login.jsx
+│       └── Signup.jsx
+├── hooks/
+│   └── useGetExpenses.jsx           # Custom hook for fetching expenses
+├── redux/
+│   ├── store.js                     # Redux store with persist config
+│   ├── authSlice.js                 # Auth state (user, token)
+│   └── expenseSlice.js              # Expense state
+└── App.jsx                          # Routes and layout
+```
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js v18+
+- Backend server running (see [backend repo]([https://github.com/your-username/Expense-Tracker-Backend](https://github.com/Iamutkarshkumar/Expense-Tracker-Backend)))
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/Expense-Tracker.git
+cd Expense-Tracker
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your backend URL
+
+# Start development server
+npm run dev
+```
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+For production, set this to your deployed backend URL.
 
 ---
 
 ## 🚀 Deployment
-The frontend is deployed on **Vercel** for fast and reliable performance.
+
+The app is deployed on **Vercel** with a `vercel.json` configuration that redirects all routes to `index.html` for client-side routing support.
+
+```bash
+npm run build   # Build for production
+npm run preview # Preview production build locally
+```
 
 ---
 
-## 📌 Project Status
-🛠️ Actively improving UI and adding features
+## 🔗 API Integration
+
+All API calls go through Axios with credentials (`withCredentials: true`) for cookie-based JWT authentication. The base URL is configured via `VITE_API_URL`.
+
+Key endpoints consumed:
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/v1/user/register` | Sign up |
+| POST | `/api/v1/user/login` | Log in |
+| GET | `/api/v1/expense/getall` | Fetch all expenses |
+| POST | `/api/v1/expense/add` | Add expense |
+| PUT | `/api/v1/expense/update/:id` | Update expense |
+| DELETE | `/api/v1/expense/remove/:id` | Delete expense |
+| PUT | `/api/v1/expense/:id/done` | Toggle done status |
 
 ---
 
 ## 👨‍💻 Author
-**Utkarsh Kumar**
 
-⭐ If you like this project, don’t forget to star the repo!
+**Utkarsh Kumar** — B.Tech CSAI, NSUT  
+
+⭐ If you found this useful, please star the repo!
